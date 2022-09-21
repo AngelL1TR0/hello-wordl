@@ -1,10 +1,10 @@
 package org.example;
 
-public class GoodbyeTask implements Runnable{
+public class goodbyeTask implements Runnable{
 
     private int times;
 
-    public GoodbyeTask(int times){
+    public goodbyeTask(int times){
         this.times = times;
     }
 
@@ -14,6 +14,8 @@ public class GoodbyeTask implements Runnable{
             System.out.println("Goodbye");
             try{
                 Thread.sleep(20);
+            } catch (InterruptedException e){
+                throw  new RuntimeException(e);
             }
         }
     }
