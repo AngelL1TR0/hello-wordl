@@ -7,5 +7,14 @@ public class Main {
 
             helloWorldThread.start();
             goodbyeThread.start();
+
+            try{
+                helloWorldThread.join();
+                goodbyeThread.join();
+            } catch (InterruptedException e){
+                throw new RuntimeException(e);
+            }
+
+            System.out.println("Final del programa");
         }
     }
